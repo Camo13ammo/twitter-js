@@ -1,7 +1,9 @@
 <h1>{{ title }}</h1>
 <p>This is a bare-bones template.</p>
+<p>{{name}}</p>
 <ul>
-{% for person in people %}
+{% for person in tweets %}
   <li>{{ person.name }}</li>
+  <li>{{ person.text }}</li>
 {% endfor %}
 </ul>
