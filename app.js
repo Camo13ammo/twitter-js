@@ -5,7 +5,7 @@ var app = express();
 
 
 app.get("/", function(request, response, next){
-	response.send("some text");
+	response.send("some text and then some more text");
 	next();
 })
 
