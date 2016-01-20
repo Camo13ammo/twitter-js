@@ -24,7 +24,7 @@ var randArrayEl = function(arr) {
 var getFakeName = function() {
   var fakeFirsts = ['Nimit', 'Dave', 'Shanna', 'Charlotte', 'Scott', 'Ayana', 'Omri', 'Gabriel', 'Joe'];
   var fakeLasts = ['Hashington', 'Stackson', 'McQueue', 'OLogn', 'Ternary', 'Claujure', 'Dunderproto', 'Binder', 'Docsreader', 'Ecma'];
-  return randArrayEl(fakeFirsts) + " " + randArrayEl(fakeLasts); // ['firstname lastname']
+  return randArrayEl(fakeFirsts) //+ " " + randArrayEl(fakeLasts);  ['firstname lastname']
 };
 
 var getFakeTweet = function() {
