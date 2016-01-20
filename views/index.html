@@ -19,6 +19,16 @@
         <li>{{tweet.text}}</li>
         <a href = http://www.google.com>re-tweet</a>
       {% endfor %}
+    {% if showForm %}
+	  <form action="/tweets" method="POST">
+	    <label for="name_field">Name: </label>
+	    <input name="name" type="text" id="name_field" value = {{ guy }} />
+	    <label for="text_field">Text:</label>
+	    <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+	    <input type="submit" value="Submit" />
+	  </form>
+	{% endif %}
       
     </div>
   </div>

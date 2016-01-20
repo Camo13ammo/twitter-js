@@ -4,6 +4,10 @@ var swig = require ('swig');
 var morgan = require('morgan'); //figure this out later
 var tweets = require('./tweetBank.js');
 var routes = require('./routes');
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false}))
 
 //These are configuration codes
 app.use('/', routes);
