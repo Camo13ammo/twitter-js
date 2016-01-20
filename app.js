@@ -29,17 +29,28 @@ app.set('views', __dirname + '/views');
 
 swig.setDefaults({ cache: false });
 
-
-app.get("/", function(request, response, next){
-	response.render('index', {title: "waddap", name: "TheThing"});
-	// next();
+app.use(function(request, response, next){
+	console.log(request.method + " " + request.path + " " + response.statusCode);
+	next();
 })
+
+
+// app.get("/", function(request, response, next){
+// 	response.render('index', {title: "waddap", name: "TheThing"});
+// 	// next();
+// })
 
 app.get('/tweets', function(request, response, next){
 	var all = tweets.list();
 	console.log(all);
-	response.render('index', {title: "some Tweets", tweets: all});
-	// next();
+	response.render('index', {title: "Some tweets", tweets: all});
+})
+
+app.get('/tweets/:num', function(request, response, next){
+	var num = request.params.num;
+	var all = tweets.list();
+	console.log(num);
+	response.render('index', {title: "some Tweets", tweets: [all[num]]});
 })
 
 app.listen(3000, function(){
