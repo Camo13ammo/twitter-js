@@ -8,11 +8,17 @@ router.get('/', function(request, response, next){
 	response.render('index', {title: "Some tweets", tweets: all});
 })
 
-router.get('/tweets/:num', function(request, response, next){
+router.get('/:num', function(request, response, next){
 	var num = request.params.num;
-	var tweets = tweets.list();
+	var all = tweets.list();
 	console.log(num);
-	response.render('index', {title: "some Tweets", tweets: [tweets[num]]});
+	response.render('index', {title: "some Tweets", tweets: [all[num]]});
+})
+
+router.get('/users/:name', function(request, response, next){
+	var name = request.params.name;
+	console.log(tweets.find(name);
+	response.render('index', {title: "some Tweets", tweets: [tweets.find(name)]});
 })
 
 module.exports = router;
